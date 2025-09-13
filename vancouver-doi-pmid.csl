@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Vancouver with DOI and PMID</title>
+    <id>http://www.zotero.org/styles/vancouver-with-doi-pmid</id>
+    <link href="http://www.zotero.org/styles/vancouver-with-doi-pmid" rel="self"/>
+    <author>
+      <name>Tilpasset af Copilot</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="medicine"/>
+    <updated>2025-09-13T20:00:00+02:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". "/>
+      <label form="short" prefix=" " suffix="." strip-periods="true"/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title" suffix="."/>
+  </macro>
+
+  <macro name="container">
+    <group delimiter=" ">
+      <text variable="container-title" font-style="italic"/>
+      <text variable="volume"/>
+      <text variable="issue" prefix="(" suffix=")"/>
+      <text variable="page"/>
+    </group>
+  </macro>
+
+  <macro name="doi-pmid">
+    <group delimiter=". ">
+      <text variable="DOI" prefix="doi: "/>
+      <text variable="PMID" prefix="PMID: "/>
+    </group>
+  </macro>
+
+  <citation>
+    <layout delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text macro="container"/>
+        <text macro="issued"/>
+        <text macro="doi-pmid"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
